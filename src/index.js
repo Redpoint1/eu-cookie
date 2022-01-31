@@ -3,6 +3,7 @@ import htmlTemplate from 'template/template.html'
 
 let euCookie = {
   elem: null,
+  version: '1.0.2',
   options: {
     cookieKey: 'eu_cookie',
     showAfter: 365,
@@ -12,7 +13,13 @@ let euCookie = {
     url: './pravidla-cookies',
   },
   init() {
-    let options = document.querySelector('[data-eu-config]')?.dataset.euConfig || '{}'
+    let attribute = document.querySelectorAll('[data-eu-config]')
+    let options = attribute[0]?.dataset.euConfig || '{}'
+
+    if (attribute.length > 1) {
+      console.warn('Multiple [data-eu-config] detected! Using', options)
+    }
+
     options = JSON.parse(options)
     for (let key in options) {
       this.options[key] = options[key]
@@ -26,7 +33,12 @@ let euCookie = {
     temp.innerHTML = this.interpolate(htmlTemplate, this)
     this.elem = temp.firstChild
     temp = null
-    document.body.appendChild(this.elem)
+    try {
+      document.body.appendChild(this.elem)
+    } catch (e) {
+      console.error('You need to import the eu_cookie.js in <body>!')
+      throw e
+    }
     this.addEventListener(
       'click',
       '.eu-container #eu-accept',
