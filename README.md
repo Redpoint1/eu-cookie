@@ -30,7 +30,7 @@ The object is available globally through ```window.euCookie```.
 
 ```php
 <?php if (!isset($_COOKIE['eu_cookie']) || $url == "pravidla-cookies"): ?>
-  <link rel="stylesheet" href=="./eu_cookie.css">
+  <link rel="stylesheet" href="./eu_cookie.css">
   <script src="./eu_cookie.js"></script>
 <?php endif; ?>}
 
