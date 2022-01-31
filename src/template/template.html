@@ -1,0 +1,42 @@
+<div class="eu-container">
+    <div class="eu-main">
+        <div id="eu-basic-container">
+            <h3>Táto stránka používa súbory cookie</h3>
+            <p>
+                Táto webová stránka používa súbory cookie na zlepšenie vášho zážitku z prehliadania. Klinutím na
+                "Súhlasím" akceptujete použitie týchto cookies.
+                <a href="${options.url}" id="eu-info">Pravidlá používania súborov cookie</a>
+            </p>
+            <div class="right">
+                <button id="eu-custom">Prispôsobiť</button>
+                <button id="eu-decline">Nesúhlasím</button>
+                <button id="eu-accept">Súhlasím</button>
+            </div>
+        </div>
+        <div id="eu-custom-container" class="hide">
+            <h3>Nastavenia súborov cookie</h3>
+            <p>Naša webová stránka uchováva tri úrovne súborov cookie. Predvolby môžete kedykoľvek upraviť. Ak chcete
+                získať viac informácií o tom, čo sú súbory cookie a ktoré súbory zhromažďujeme, prečítajte si naše
+                <a href="${options.url}" id="eu-info">pravidlá používania súborov cookie</a>.</p>
+            <div>
+                <button id="eu-accept-all">Povoliť všetko</button>
+                <button id="eu-decline-all">Zakázať všetko</button>
+            </div>
+            <div><label><input type="checkbox" disabled checked>Funkčné cookies</label></div>
+            <p class="description">Sú základné súbory cookie, ktoré zabezpečujú správne fungovanie webovej stránky a
+                ukladanie vašich
+                preferencií (napr. jakyka, regiónu).</p>
+            <div><label><input type="checkbox" name="cookies" value="${options.analyticsValue}">Analytické cookies</label></div>
+            <p class="description">Nám umožňuje analyzovať použitie webových stránok a zlepšovať zážitky
+                návštevníkov.</p>
+            <div><label><input type="checkbox" name="cookies" value="${options.marketingValue}">Marketingové cookies</label></div>
+            <p class="description">Dovoľte nám prispôsobiť vaše skúsenosti a zasielať vám relevantný obsah a ponuky
+                na tomto webovom
+                serveri a ďaľších webových stránkach.</p>
+            <div class="right">
+                <button id="eu-back">Zrušiť</button>
+                <button id="eu-save">Uložiť</button>
+            </div>
+        </div>
+    </div>
+</div>
