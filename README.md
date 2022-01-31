@@ -34,7 +34,7 @@ The object is available globally through ```window.euCookie```.
   <script src="./eu_cookie.js"></script>
 <?php endif; ?>}
 
-<?php if (!empty($_COOKIE['eu_cookie']) && array_search('marketing', explode(',', $_COOKIE['eu_cookie']))): ?>
+<?php if (!empty($_COOKIE['eu_cookie']) && in_array('marketing', explode(',', $_COOKIE['eu_cookie']))): ?>
   <script src="./marketing.js"></script>
 <?php endif; ?>
 ```
