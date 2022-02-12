@@ -1,43 +1,44 @@
 <div class="eu-container">
     <div class="eu-main">
         <div id="eu-basic-container">
-            <h3>Používame cookies</h3>
+            <h3>${text.title}</h3>
             <div class="flex">
                 <p>
-                    Táto webová stránka používa súbory cookie na zlepšenie vášho zážitku z prehliadania. Klinutím na
-                    "Súhlasím" akceptujete použitie týchto cookies.
-                    <a href="${options.url}" id="eu-info">Pravidlá používania súborov cookie</a>
+                    ${text.description}
+                    <a href="${options.url}" id="eu-info">${text.link}</a>
                 </p>
                 <div class="right">
-                    <button id="eu-custom">Prispôsobiť</button>
-                    <button id="eu-decline">Nesúhlasím</button>
-                    <button id="eu-accept">Súhlasím</button>
+                    <button id="eu-custom">${text.customize}</button>
+                    <button id="eu-decline">${text.decline}</button>
+                    <button id="eu-accept">${text.accept}</button>
                 </div>
             </div>
         </div>
         <div id="eu-custom-container" class="hide">
-            <h3>Nastavenia súborov cookie</h3>
-            <p>Naša webová stránka uchováva tri úrovne súborov cookie. Predvolby môžete kedykoľvek upraviť. Ak chcete
-                získať viac informácií o tom, čo sú súbory cookie a ktoré súbory zhromažďujeme, prečítajte si naše
-                <a href="${options.url}" id="eu-info">pravidlá používania súborov cookie</a>.</p>
+            <h3>${text.customize_title}</h3>
+            <p>
+                ${text.customize_description}
+                <a href="${options.url}" id="eu-info">${text.link}</a>.
+            </p>
             <div>
-                <button id="eu-accept-all">Povoliť všetko</button>
-                <button id="eu-decline-all">Zakázať všetko</button>
+                <button id="eu-accept-all">${text.accept_all}</button>
+                <button id="eu-decline-all">${text.decline_all}</button>
             </div>
-            <div><label><input type="checkbox" disabled checked>Funkčné cookies</label></div>
-            <p class="description">Sú základné súbory cookie, ktoré zabezpečujú správne fungovanie webovej stránky a
-                ukladanie vašich
-                preferencií (napr. jakyka, regiónu).</p>
-            <div><label><input type="checkbox" name="cookies" value="${options.analyticsValue}">Analytické cookies</label></div>
-            <p class="description">Nám umožňuje analyzovať použitie webových stránok a zlepšovať zážitky
-                návštevníkov.</p>
-            <div><label><input type="checkbox" name="cookies" value="${options.marketingValue}">Marketingové cookies</label></div>
-            <p class="description">Dovoľte nám prispôsobiť vaše skúsenosti a zasielať vám relevantný obsah a ponuky
-                na tomto webovom
-                serveri a ďaľších webových stránkach.</p>
+            <div>
+                <label><input type="checkbox" disabled checked>${text.functional_cookies}</label>
+            </div>
+            <p class="description">${text.functional_cookies_description}</p>
+            <div>
+                <label><input type="checkbox" name="cookies" value="${options.analyticsValue}">${text.analytics_cookies}</label>
+            </div>
+            <p class="description">${text.analytics_cookies_description}.</p>
+            <div>
+                <label><input type="checkbox" name="cookies" value="${options.marketingValue}">${text.marketing_cookies}</label>
+            </div>
+            <p class="description">${text.marketing_cookies_description}.</p>
             <div class="right">
-                <button id="eu-back">Zrušiť</button>
-                <button id="eu-save">Uložiť</button>
+                <button id="eu-back">${text.cancel}</button>
+                <button id="eu-save">${text.save}</button>
             </div>
         </div>
     </div>

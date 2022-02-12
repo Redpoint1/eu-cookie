@@ -1,5 +1,6 @@
 import '@/styles/index.scss'
 import htmlTemplate from 'template/template.html'
+import i18n from '@/i18n'
 
 let euCookie = {
   elem: null,
@@ -11,7 +12,10 @@ let euCookie = {
     analyticsValue: 'analytics',
     marketingValue: 'marketing',
     url: './pravidla-cookies',
+    lang: 'sk',
   },
+  i18n,
+  text: {},
   init() {
     let attribute = document.querySelectorAll('[data-eu-config]')
     let options = attribute[0]?.dataset.euConfig || '{}'
@@ -27,9 +31,16 @@ let euCookie = {
     let cookiePolicy = this.getCookie(this.options.cookieKey)
     if (cookiePolicy === null) this.open()
   },
+  loadLanguage(language) {
+    if (!Object.keys(this.i18n).includes('language')) {
+      console.error(`Unable to load text for "${language}" language.`)
+    }
+    this.text = this.i18n[language]
+  },
   open: function () {
     let temp = document.createElement('div')
     this.modal()?.remove()
+    this.loadLanguage(this.options.lang)
     temp.innerHTML = this.interpolate(htmlTemplate, this)
     this.elem = temp.firstChild
     temp = null
@@ -100,7 +111,7 @@ let euCookie = {
   interpolate: function (s, obj) {
     return s.replace(/[$]{([^}]+)}/g, function (_, path) {
       const properties = path.split('.')
-      return properties.reduce((prev, curr) => prev && prev[curr], obj)
+      return properties.reduce((prev, curr) => prev && prev[curr], obj) ?? path
     })
   },
   modal: function () {
